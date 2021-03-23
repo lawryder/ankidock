@@ -15,7 +15,8 @@ Funktion über Dyn-DNS sowie hinter einem Reverse Proxy kann bestätigt werden.<
 
 <h3><u>In Arbeit:</u></h3>
 -- Hinzufügen des Repositories zu 'Community Applications'</br>
--- Templateerstellung, sodass die beschriebenen Schritte nicht mehr durchgeführt werden brauchen
+-- Templateerstellung, sodass die beschriebenen Schritte nicht mehr durchgeführt werden brauchen</br>
+</br>
 </br>
 </br>
 Nach dem Herunterladen des Containers kann es sein, dass der Container sich nach dem Starten selbst wieder beendet.</br>
@@ -24,13 +25,13 @@ Hierzu muss noch das Template geändert werden.</br>
 Die folgenden Befehle können noch auf Eure Bedürfnisse angepasst und dann in den genannten Feldern eingetragen werden:
 </br>
 1) WEBUI:   </br>
-http://[Eure private Netzwerk-IP]:[Port], z.B. http://192.168.xxx.xxx:27701
+http://[Eure private Netzwerk-IP]:[Port], z.B. http://192.168.xxx.xxx:27701</br>
 </br>
 2) Extra Parameters:    </br>
---mount type=volume,dst=/anki-sync-server,volume-driver=local,volume-opt=type=none,volume-opt=o=bind,volume-opt=device=/mnt/user/appdata/ankidock/anki-server --mount type=volume,dst=/etc/nginx,volume-driver=local,volume-opt=type=none,volume-opt=o=bind,volume-opt=device=/mnt/user/appdata/ankidock/nginx -dit
+--mount type=volume,dst=/anki-sync-server,volume-driver=local,volume-opt=type=none,volume-opt=o=bind,volume-opt=device=/mnt/user/appdata/ankidock/anki-server --mount type=volume,dst=/etc/nginx,volume-driver=local,volume-opt=type=none,volume-opt=o=bind,volume-opt=device=/mnt/user/appdata/ankidock/nginx -dit </br>
 </br>
 3) Post Arguments:</br>
-bash
+bash</br>
 </br>
 </br>
 Klickt nun noch auf "Add another path, port, [...]" und wählt "Port" aus.</br>
