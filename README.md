@@ -16,9 +16,8 @@ Funktion über Dyn-DNS sowie hinter einem Reverse Proxy kann bestätigt werden.
 <h3><u>In Arbeit:</u></h3>
 -- Hinzufügen des Repositories zu 'Community Applications'
 -- Templateerstellung, sodass die beschriebenen Schritte nicht mehr durchgeführt werden brauchen
-
-
-
+</br>
+</br>
 Nach dem Herunterladen des Containers kann es sein, dass der Container sich nach dem Starten selbst wieder beendet.
 Hierzu muss noch das Template geändert werden.
 
