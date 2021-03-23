@@ -1,6 +1,4 @@
 # ankidock
-https://hub.docker.com/repository/docker/lawryder/ankidock
-
 <h2><u>Hinweis</u></h2>
 
 Container erstellt zur Nutzung unter Unraid. </br>
