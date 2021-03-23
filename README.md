@@ -1,7 +1,7 @@
 # ankidock
 https://hub.docker.com/repository/docker/lawryder/ankidock
 
-######## Hinweis ##############################################################################################################
+######## Hinweis ###############################################
 
 Container erstellt zur Nutzung unter Unraid. 
 Verwendung in anderen Docker-Umgebungen sollte möglich sein, evtl. sind dann aber andere Anpassungen nötig.
@@ -11,7 +11,7 @@ Funktion über Dyn-DNS sowie hinter einem Reverse Proxy kann bestätigt werden.
 
 
 
-######## 01) Einrichtung in Unraid ############################################################################################
+######## 01) Einrichtung in Unraid #############################
 
 ##### In Arbeit: #####
 -- Hinzufügen des Repositories zu 'Community Applications'
@@ -46,7 +46,7 @@ Er sollte sich nun nicht mehr selbst beenden.
 
 
 
-######## 02) Einrichtung des Containers #######################################################################################
+######## 02) Einrichtung des Containers ##########################
 
 Nach dem Herunterladen müssen zunächst noch Dateien verändert werden, damit eine Verbindung von außen aufgebaut werden kann. 
 Als Ausgangsverzeichnis lege ich jeweils /mnt/user/appdata/ankidock/ zugrunde.
@@ -92,7 +92,7 @@ Ist dies der Fall, könnt Ihr die Konsole nun schließen. Euer Server läuft :-)
 
 
 
-######## 02) Einrichtung der App #############################################################################################
+######## 02) Einrichtung der App ###########################
 
 Für die Einrichtung am PC und der Apps verweise ich auf die Kollegen von ankicommunity/anki-sync-server.
 Siehe: https://github.com/ankicommunity/anki-sync-server
