@@ -5,4 +5,4 @@ RUN ./installscript.sh
 
 COPY ./default /etc/nginx/sites-enabled/
 
-ENABLE 27701
+EXPOSE 27701
