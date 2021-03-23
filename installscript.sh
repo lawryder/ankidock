@@ -9,7 +9,7 @@ git \
 nginx \
 python3 \
 python3-distutils \
-python3-pip8
+python3-pip
 
 # Und jetzt zum Hauptprogramm!
 
