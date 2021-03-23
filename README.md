@@ -8,9 +8,9 @@ Verwendung in anderen Docker-Umgebungen sollte möglich sein, evtl. sind dann ab
 
 Getestet mit AnkiDroid, Anki 2.1.28 (PC) und Anki 2.1.42 (PC + Mac).
 Funktion über Dyn-DNS sowie hinter einem Reverse Proxy kann bestätigt werden.
-
-
-
+</br>
+</hl>
+</br>
 <h2><u>01) Einrichtung in Unraid</u></h2>
 
 <h3><u>In Arbeit:</u></h3>
@@ -42,10 +42,9 @@ Host Port:        [nach Belieben], empfohlen: 27701
 
 Nach dem Speichern könnt Ihr den Server im Dashboard starten.
 Er sollte sich nun nicht mehr selbst beenden.
-
-
-
-
+</br>
+</hl>
+</br>
 <h2><u>02) Einrichtung des Containers</h2></u>
 
 Nach dem Herunterladen müssen zunächst noch Dateien verändert werden, damit eine Verbindung von außen aufgebaut werden kann. 
@@ -88,10 +87,9 @@ Alternativ könnt Ihr in Unraid auch auf WebUI klicken.
 Es sollte sich eine weiße Seite mit dem Text "Anki Sync Server" öffnen. Weiterhin sollte die Konsole auch den Zugriff anzeigen.
 
 Ist dies der Fall, könnt Ihr die Konsole nun schließen. Euer Server läuft :-)
-
-
-
-
+</br>
+</hl>
+</br>
 <h2><u>02) Einrichtung der App</h2></u>
 
 Für die Einrichtung am PC und der Apps verweise ich auf die Kollegen von ankicommunity/anki-sync-server.
