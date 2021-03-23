@@ -18,7 +18,3 @@ git clone https://github.com/ankicommunity/anki-sync-server/
 
 # Dependancies mit Pip installieren
 pip install -r /anki-sync-server/src/requirements.txt
-
-# Aufräumen
-apt-get purge -y git
-apt autoremove autoclean clean -y
