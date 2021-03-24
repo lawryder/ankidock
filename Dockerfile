@@ -14,7 +14,7 @@ tzdata
 
 RUN git clone https://github.com/ankicommunity/anki-sync-server/
 
-RUN pip install -r /anki-sync-server/src/requirements.txt
+RUN pip3 install -r /anki-sync-server/src/requirements.txt
 
 COPY ./default /etc/nginx/sites-enabled/
 
