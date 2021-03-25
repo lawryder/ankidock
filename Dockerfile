@@ -15,7 +15,9 @@ tzdata
 COPY ./default /etc/nginx/sites-enabled/
 
 RUN git clone https://github.com/ankicommunity/anki-sync-server/ && \
-pip3 install -r /anki-sync-server/src/requirements.txt && \
-systemctl start nginx
+pip3 install -r /anki-sync-server/src/requirements.txt &&\
+echo "daemon off;" >> /etc/nginx/nginx.conf
+
+CMD ["nginx","-g","daemon off;"]
 
 EXPOSE 27701
