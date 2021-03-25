@@ -19,6 +19,6 @@ RUN git clone https://github.com/ankicommunity/anki-sync-server/ && \
 pip3 install -r /anki-sync-server/src/requirements.txt && \
 chmod +x run.sh
 
-CMD /bin/bash run.sh
+CMD ./run.sh
 
 EXPOSE 27701
