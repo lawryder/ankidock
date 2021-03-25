@@ -13,8 +13,8 @@ systemctl \
 tzdata && \
 git clone https://github.com/ankicommunity/anki-sync-server/ && \
 pip3 install -r /anki-sync-server/src/requirements.txt && \
-echo "daemon off;" >> /etc/nginx/nginx.conf && \
-apt-get autoremove autoclean clean
+apt-get autoremove autoclean clean && \
+echo "daemon off;" >> /etc/nginx/nginx.conf
 
 COPY ./default /etc/nginx/sites-enabled/
 
