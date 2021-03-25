@@ -1,24 +1,23 @@
 FROM ubuntu
 
 ENV TZ=Europe/Berlin
+COPY ./run.sh /
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
 apt-get update && apt-get install -y \
-git \
-nginx \
+tzdata \
+systemctl \
 python3 \
 python3-distutils \
 python3-pip \
-systemctl \
-tzdata && \
+git \
+nginx && \
 git clone https://github.com/ankicommunity/anki-sync-server/ && \
 pip3 install -r /anki-sync-server/src/requirements.txt && \
 apt-get autoremove && \
-echo "daemon off;" >> /etc/nginx/nginx.conf
+echo "daemon off;" >> /etc/nginx/nginx.conf && \
+chmod +x ./run.sh
 
 COPY ./default /etc/nginx/sites-enabled/
-COPY ./run.sh /
-
-CMD [./run.sh]
 
 EXPOSE 27701
