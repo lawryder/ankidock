@@ -13,12 +13,9 @@ systemctl \
 tzdata
 
 COPY ./default /etc/nginx/sites-enabled/
-COPY run.sh /
 
 RUN git clone https://github.com/ankicommunity/anki-sync-server/ && \
 pip3 install -r /anki-sync-server/src/requirements.txt && \
-chmod +x run.sh
-
-CMD ./run.sh
+systemctl start nginx
 
 EXPOSE 27701
