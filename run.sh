@@ -1,2 +1,4 @@
 /etc/init.d/nginx start
-python3 -m /anki-sync-server/src/ankisyncd
+cd /
+cd anki-sync-server/src
+python3 -m ankisyncd
