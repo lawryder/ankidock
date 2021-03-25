@@ -9,22 +9,20 @@ Works with VPN, DynDNS and behind a reverse Proxy.</br>
 </br>
 </hl>
 </br>
-<h2><u>01) Setup in Unraid</u></h2>
+<h2><u>01. Setup in Unraid</u></h2>
 
-<h3><u>Work in progress:</u></h3>
--- Adding repository 'Community Applications'</br>
--- Building a template for CA to spare this part.</br>
+<h3><u>Update:</u></h3>
+-- Repository and Template added to CA </br>
+-- Information on 1. is just for backup purposes.</br>
 </br>
 </br>
-</br>
-After downloading this container, it will stop immediately after starting it.</br>
-To avoid this, you have to add a few data to the template.</br>
+This is the data to be filled in the template: </br>
 </br>
 1) WEBUI:   </br>
-http://[Your private IP]:[Port], z.B. http://192.168.xxx.xxx:27701</br>
+http://[Your private IP]:[Port], i.e. http://192.168.xxx.xxx:27701</br>
 </br>
 2) Extra Parameters:    </br>
---mount type=volume,dst=/anki-sync-server,volume-driver=local,volume-opt=type=none,volume-opt=o=bind,volume-opt=device=/mnt/user/appdata/ankidock/anki-server --mount type=volume,dst=/etc/nginx,volume-driver=local,volume-opt=type=none,volume-opt=o=bind,volume-opt=device=/mnt/user/appdata/ankidock/nginx -dit </br>
+--mount type=volume,dst=/anki-sync-server,volume-driver=local,volume-opt=type=none,volume-opt=o=bind,volume-opt=device=/mnt/user/appdata/ankidock/anki-server --mount type=volume,dst=/etc/nginx,volume-driver=local,volume-opt=type=none,volume-opt=o=bind,volume-opt=device=/mnt/user/appdata/ankidock/nginx -it </br>
 </br>
 3) Post Arguments:</br>
 bash</br>
@@ -33,14 +31,12 @@ bash</br>
 Now click on "Add another path, port, [...]" and choose "Port".</br>
 Give it a name and insert the following:</br>
 Container Port:   27701</br>
-Host Port:        [whatever Port you like], recommended: 27701</br>
+Host Port:        [whatever Port you like*], recommended: 27701</br>
+</br>
+* = if you change it, think about chanking nginx.conf ('listen [PORT]'), too. (see 2.)</br>
 </br>
 </br>
-After saving, you should be able to start the server without shutdown.</br>
-</br>
-</hl>
-</br>
-<h2><u>02) Setup the container</h2></u>
+<h2><u>02. Setup the container</h2></u>
 </br>
 In order to use the container, there is still a little work needed.</br>
 As base directory for every folder in the following, I use '/mnt/user/appdata/ankidock/'.</br>
@@ -69,7 +65,7 @@ Use "python3 ankisyncctl.py" to show more commands.</br>
 </br>
 </br>
 Now you can run the server itself</br>
-Use "python3-m ankisyncd".</br>
+Go back to base directory ('cd /') and run './run.sh'.</br>
 </br>
 </br>
 If you get a message that contains sth. like </br>
@@ -84,7 +80,7 @@ Your server is running :-)</br>
 </br>
 </hl>
 </br>
-<h2><u>02) Setup apps</h2></u>
+<h2><u>03. Setup apps</h2></u>
 </br>
 For this, I refer to ankicommunity/anki-sync-server.</br>
 https://github.com/ankicommunity/anki-sync-server
