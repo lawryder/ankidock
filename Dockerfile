@@ -10,14 +10,14 @@ python3 \
 python3-distutils \
 python3-pip \
 systemctl \
-tzdata
+tzdata && \
+git clone https://github.com/ankicommunity/anki-sync-server/ && \
+pip3 install -r /anki-sync-server/src/requirements.txt && \
+echo "daemon off;" >> /etc/nginx/nginx.conf && \
+apt-get autoremove autoclean clean -y
 
 COPY ./default /etc/nginx/sites-enabled/
 
-RUN git clone https://github.com/ankicommunity/anki-sync-server/ && \
-pip3 install -r /anki-sync-server/src/requirements.txt &&\
-echo "daemon off;" >> /etc/nginx/nginx.conf
-
-CMD ["nginx","-g","daemon off;"]
+CMD ["systemctl","enable","nginx"]
 
 EXPOSE 27701
