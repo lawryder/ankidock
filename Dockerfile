@@ -14,7 +14,7 @@ tzdata && \
 git clone https://github.com/ankicommunity/anki-sync-server/ && \
 pip3 install -r /anki-sync-server/src/requirements.txt && \
 echo "daemon off;" >> /etc/nginx/nginx.conf && \
-apt-get autoremove autoclean clean -y
+apt-get autoremove autoclean clean
 
 COPY ./default /etc/nginx/sites-enabled/
 
