@@ -9,24 +9,18 @@ Funktion über Dyn-DNS sowie hinter einem Reverse Proxy kann bestätigt werden.<
 </br>
 </hl>
 </br>
-<h2><u>01) Einrichtung in Unraid</u></h2>
-
-<h3><u>In Arbeit:</u></h3>
--- Hinzufügen des Repositories zu 'Community Applications'</br>
--- Templateerstellung, sodass die beschriebenen Schritte nicht mehr durchgeführt werden brauchen</br>
+<h2><u>01. Einrichtung in Unraid</u></h2>
+UPDATE:</br>
+Das Repository wurde mitsamt einem Template in CA gelisted. </br>
+Die folgenden Informationen dienen der Vollständigkeit, falls mal etwas verrutscht.
 </br>
-</br>
-</br>
-Nach dem Herunterladen des Containers kann es sein, dass der Container sich nach dem Starten selbst wieder beendet.</br>
-Hierzu muss noch das Template geändert werden.</br>
-</br>
-Die folgenden Befehle können noch auf Eure Bedürfnisse angepasst und dann in den genannten Feldern eingetragen werden:
+Folgende Befehle müssen, falls nicht (mehr) vorhanden, im Template eingetragen werden, damit alles funktioniert:
 </br>
 1) WEBUI:   </br>
 http://[Eure private Netzwerk-IP]:[Port], z.B. http://192.168.xxx.xxx:27701</br>
 </br>
 2) Extra Parameters:    </br>
---mount type=volume,dst=/anki-sync-server,volume-driver=local,volume-opt=type=none,volume-opt=o=bind,volume-opt=device=/mnt/user/appdata/ankidock/anki-server --mount type=volume,dst=/etc/nginx,volume-driver=local,volume-opt=type=none,volume-opt=o=bind,volume-opt=device=/mnt/user/appdata/ankidock/nginx -dit </br>
+--mount type=volume,dst=/anki-sync-server,volume-driver=local,volume-opt=type=none,volume-opt=o=bind,volume-opt=device=/mnt/user/appdata/ankidock/anki-server --mount type=volume,dst=/etc/nginx,volume-driver=local,volume-opt=type=none,volume-opt=o=bind,volume-opt=device=/mnt/user/appdata/ankidock/nginx -it </br>
 </br>
 3) Post Arguments:</br>
 bash</br>
@@ -35,7 +29,10 @@ bash</br>
 Klickt nun noch auf "Add another path, port, [...]" und wählt "Port" aus.</br>
 Vergebt einen Namen und tragt folgendes ein:</br>
 Container Port:   27701</br>
-Host Port:        [nach Belieben], empfohlen: 27701</br>
+Host Port:        [nach Belieben*], empfohlen: 27701</br>
+</br>
+* = Falls Ihr hier etwas anderes eintragt, muss dieser Port auch in der nginx.conf geändert werden! (siehe 2.) </br>
+</br>
 </br>
 </br>
 Nach dem Speichern könnt Ihr den Server im Dashboard starten.</br>
@@ -43,7 +40,7 @@ Er sollte sich nun nicht mehr selbst beenden.</br>
 </br>
 </hl>
 </br>
-<h2><u>02) Einrichtung des Containers</h2></u>
+<h2><u>02. Einrichtung des Containers</h2></u>
 </br>
 Nach dem Herunterladen müssen zunächst noch Dateien verändert werden, damit eine Verbindung von außen aufgebaut werden kann. </br>
 Als Ausgangsverzeichnis lege ich jeweils /mnt/user/appdata/ankidock/ zugrunde.</br>
@@ -73,11 +70,10 @@ Um weitere Möglichkeiten anzuzeigen, nutzt "python3 ankisyncctl.py"</br>
 </br>
 Nun wird es aber Zeit, den Server auch zu starten. </br>
 </br>
-Nutzt dazu den Befehl "python3-m ankisyncd".</br>
+Wechselt dazu einfach wieder ins Stammverzeichnis ("cd /") und führt "./run.sh" aus. </br>
+Wenn alles geklappt hat, bekommt Ihr angezeigt, dass nginx gestartet wurde und der Server </br>
+auf der Container-IP über den von euch gewählten Port läuft. </br>
 </br>
-</br>
-Der Server sollte laufen, wenn Ihr eine Ausgabe erhaltet, die in etwa folgendes beinhaltet: </br>
-"Running HTTP on 172.17.x.x on Port 27702" (oder was auch immer Ihr gewählt habt).</br>
 </br>
 Zum Test, ob der Container auch von außen erreichbar ist, könnt Ihr einen Browser öffnen und ruft </br>
 "http://[Private IP]:27701" (also z.B. http://192.168.xxx.xxx:27701) auf. </br>
@@ -88,7 +84,7 @@ Ist dies der Fall, könnt Ihr die Konsole nun schließen. Euer Server läuft :-)
 </br>
 </hl>
 </br>
-<h2><u>02) Einrichtung der App</h2></u>
+<h2><u>03. Einrichtung der App</h2></u>
 </br>
 Für die Einrichtung am PC und der Apps verweise ich auf die Kollegen von ankicommunity/anki-sync-server.</br>
 Siehe: https://github.com/ankicommunity/anki-sync-server
