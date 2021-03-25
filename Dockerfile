@@ -1,9 +1,9 @@
 FROM ubuntu
 
 ENV TZ=Europe/Berlin
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt-get update && apt-get install -y \
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
+apt-get update && apt-get install -y \
 git \
 nginx \
 python3 \
@@ -18,6 +18,6 @@ RUN pip3 install -r /anki-sync-server/src/requirements.txt
 
 COPY ./default /etc/nginx/sites-enabled/
 
-CMD ["systemctl","enable","nginx"]
+CMD ["systemctl","start","nginx","&&","systemctl","restart","nginx"]
 
 EXPOSE 27701
