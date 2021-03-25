@@ -18,6 +18,6 @@ RUN pip3 install -r /anki-sync-server/src/requirements.txt
 
 COPY ./default /etc/nginx/sites-enabled/
 
-CMD ["nginx"]
+CMD ["/etc/init.d/nginx","start"]
 
 EXPOSE 27701
