@@ -12,12 +12,13 @@ python3-pip \
 systemctl \
 tzdata
 
-RUN git clone https://github.com/ankicommunity/anki-sync-server/
-
-RUN pip3 install -r /anki-sync-server/src/requirements.txt
-
 COPY ./default /etc/nginx/sites-enabled/
+COPY run.sh /
 
-CMD ["/etc/init.d/nginx","start"]
+RUN git clone https://github.com/ankicommunity/anki-sync-server/ && \
+pip3 install -r /anki-sync-server/src/requirements.txt && \
+chmod +x run.sh
+
+CMD /bin/bash run.sh
 
 EXPOSE 27701
