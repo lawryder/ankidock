@@ -42,13 +42,13 @@ In order to use the container, there is still a little work needed.</br>
 As base directory for every folder in the following, I use '/mnt/user/appdata/ankidock/'.</br>
 </br>
 1) /anki-sync-server/src/ankisyncd.conf </br>
- -- Enter the internal IP of the Docker (172.17.x.x) </br>
+ -- If IP is 0.0.0.0 - leave it like that. Else: change it to 0.0.0.0 </br>
  -- Choose a port as you wish, EXCEPT 27701 [Standard: 27702]</br>
 </br>
 2) /nginx/sites-enabled/default </br>
- -- On "proxy_pass", also enter your Docker's internal IP.</br>
+ -- On "proxy_pass", also enter 0.0.0.0 as IP.</br>
     Set the same Port that you used under 1)</br>
- -- It should now look like: http://[IP of the container]:[Port]/</br>
+ -- It should now look like: http://0.0.0.0:[Port]/</br>
 </br>
 </br>
 Now start the container and open the console.</br>
@@ -69,7 +69,7 @@ Go back to base directory ('cd /') and run './run.sh'.</br>
 </br>
 </br>
 If you get a message that contains sth. like </br>
-"Running HTTP on 172.17.x.x on Port 27702" (or whatever you have chosen), then the server is running.</br>
+"Running HTTP on 0.0.0.0 on Port 27702" (or whatever you have chosen), then the server is running.</br>
 </br>
 To test connectivity from outside, open a browser and open </br>
 "http://[Private Network IP]:27701" (i.e. http://192.168.xxx.xxx:27701). </br>
@@ -78,7 +78,8 @@ You are connected if you see a white page with text "Anki Sync Server".</br>
 </br>
 Your server is running :-)</br>
 </br>
-</hl>
+PS: Please think about running "./run.sh" on every restart of the container :-)
+</br>
 </br>
 <h2><u>03. Setup apps</h2></u>
 </br>
