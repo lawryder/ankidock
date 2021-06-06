@@ -46,13 +46,13 @@ Nach dem Herunterladen müssen zunächst noch Dateien verändert werden, damit e
 Als Ausgangsverzeichnis lege ich jeweils /mnt/user/appdata/ankidock/ zugrunde.</br>
 </br>
 1) /anki-sync-server/src/ankisyncd.conf </br>
- -- hier die interne IP eures Docker-Containers einfügen (172.17.x.x) </br>
+ -- hier tragt ihr als IP 0.0.0.0 ein. </br>
  -- Den Port nach Belieben ändern, AUßER 27701 [Standard: 27702]</br>
 </br>
 2) /nginx/sites-enabled/default </br>
- -- bei "proxy_pass" tragt ihr auch wieder die interne IP eures Docker-Containers ein. </br>
+ -- bei "proxy_pass" tragt ihr als IP auch wieder 0.0.0.0 ein. </br>
     Hier tragt ihr auch den oben gewählten Port ein. </br>
- -- Format: http://[IP des Containers]:[Port]/</br>
+ -- Format: http://0.0.0.0:[Port]/</br>
 </br>
 </br>
 Startet nun den Container und wechselt in die Konsole.</br>
@@ -82,7 +82,8 @@ Es sollte sich eine weiße Seite mit dem Text "Anki Sync Server" öffnen. Weiter
 </br>
 Ist dies der Fall, könnt Ihr die Konsole nun schließen. Euer Server läuft :-)</br>
 </br>
-</hl>
+Denkt bitte daran, nach jedem Neustart eures Containers die "./run.sh" auszuführen.
+</br>
 </br>
 <h2><u>03. Einrichtung der App</h2></u>
 </br>
